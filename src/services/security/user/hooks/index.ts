@@ -1,13 +1,16 @@
 import { fastJoin } from 'feathers-hooks-common';
 import { resolvers } from '../user.resolvers';
-import { hashPassword } from './hooks';
+import { hashPassword, setFullName } from './hooks';
 
 export default {
   before: {
     all: [],
     find: [],
     get: [],
-    create: [hashPassword],
+    create: [
+      hashPassword,
+      setFullName,
+    ],
     update: [],
     patch: [],
     remove: []

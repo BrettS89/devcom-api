@@ -24,6 +24,9 @@ export default function (app: Application): Model<any> {
     lastName: {
       type: String,
     },
+    fullName: {
+      type: String,
+    },
     accountId: {
       type: Schema.Types.ObjectId,
       ref: 'security/account',

@@ -39,3 +39,11 @@ export const setRole = async (context: HookContext): Promise<HookContext> => {
 
   return context;
 };
+
+export const setFullName = (context: HookContext): HookContext => {
+  const { app, data } = context;
+
+  data.fullName = `${data.firstName} ${data.lastName}`;
+
+  return context;
+};
