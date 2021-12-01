@@ -31,6 +31,7 @@ export default function (app: Application): Model<any> {
       type: Schema.Types.ObjectId,
       ref: 'security/account',
       required: true,
+      index: true,
     },
     roleId: {
       type: Schema.Types.ObjectId,

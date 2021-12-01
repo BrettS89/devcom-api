@@ -21,14 +21,17 @@ export default function (app: Application): Model<any> {
     ticketId: {
       type: Schema.Types.ObjectId,
       ref: 'project/ticket',
+      index: true,
     },
     channelId: {
       type: Schema.Types.ObjectId,
       ref: 'communication/channel',
+      index: true,
     },
     dmId: {
       type: Schema.Types.ObjectId,
       ref: 'communication/dm',
+      index: true,
     },
     text: {
       type: String,

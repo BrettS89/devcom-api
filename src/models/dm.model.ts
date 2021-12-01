@@ -13,6 +13,7 @@ export default function (app: Application): Model<any> {
     accountId: {
       type: Schema.Types.ObjectId,
       ref: 'security/account',
+      index: true,
     },
     userIds: [{
       type: Schema.Types.ObjectId,
