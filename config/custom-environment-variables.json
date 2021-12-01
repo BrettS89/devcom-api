@@ -1,0 +1,5 @@
+{
+  "jwtSecret": "JWT_SECRET",
+  "port": "PORT",
+  "mongodb": "MONGO_URI"
+}
