@@ -1,49 +1,23 @@
-// project/ticket-model.ts - A mongoose model
+// project/project-model.ts - A mongoose model
 //
-// See http://mongoosejs.com/docs/models.htmlss
+// See http://mongoosejs.com/docs/models.html
 // for more of what you can do here.
 import { Application } from '../declarations';
 import { Model, Mongoose } from 'mongoose';
 
 export default function (app: Application): Model<any> {
-  const modelName = 'project/ticket';
+  const modelName = 'project/project';
   const mongooseClient: Mongoose = app.get('mongooseClient');
   const { Schema } = mongooseClient;
   const schema = new Schema({
     accountId: {
       type: Schema.Types.ObjectId,
       ref: 'security/account',
-      required: true,
-      index: true,
-    },
-    assignerUserId: {
-      type: Schema.Types.ObjectId,
-      ref: 'security/user',
-      required: true,
-    },
-    assigneeUserId: {
-      type: Schema.Types.ObjectId,
-      ref: 'security/user',
-    },
-    testerUserId: {
-      type: Schema.Types.ObjectId,
-      ref: 'security/user',
-    },
-    status: {
-      type: Schema.Types.ObjectId,
-      ref: 'project/status',
-      required: true,
-    },
-    priority: {
-      type: Number,
-      required: true,
+      requried: true,
     },
     name: {
       type: String,
       required: true,
-    },
-    description: {
-      type: String,
     },
   }, {
     timestamps: true

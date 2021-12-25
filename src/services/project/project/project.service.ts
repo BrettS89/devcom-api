@@ -1,14 +1,14 @@
-// Initializes the `security/account` service on path `/security/account`
+// Initializes the `project/project` service on path `/project/project`
 import { ServiceAddons } from '@feathersjs/feathers';
 import { Application } from '../../../declarations';
-import { Account } from './account.class';
-import createModel from '../../../models/account.model';
-import hooks from './hooks';
+import { Project } from './project.class';
+import createModel from '../../../models/project.model';
+import hooks from './project.hooks';
 
 // Add this service to the service type index
 declare module '../../../declarations' {
   interface ServiceTypes {
-    'security/account': Account & ServiceAddons<any>;
+    'project/project': Project & ServiceAddons<any>;
   }
 }
 
@@ -19,10 +19,10 @@ export default function (app: Application): void {
   };
 
   // Initialize our service with any options it requires
-  app.use('/security/account', new Account(options, app));
+  app.use('/project/project', new Project(options, app));
 
   // Get our initialized service so that we can register hooks
-  const service = app.service('security/account');
+  const service = app.service('project/project');
 
   service.hooks(hooks);
 }

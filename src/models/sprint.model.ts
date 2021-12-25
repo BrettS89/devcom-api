@@ -1,12 +1,12 @@
-// project/ticket-model.ts - A mongoose model
+// project/sprint-model.ts - A mongoose model
 //
-// See http://mongoosejs.com/docs/models.htmlss
+// See http://mongoosejs.com/docs/models.html
 // for more of what you can do here.
 import { Application } from '../declarations';
 import { Model, Mongoose } from 'mongoose';
 
 export default function (app: Application): Model<any> {
-  const modelName = 'project/ticket';
+  const modelName = 'sprint';
   const mongooseClient: Mongoose = app.get('mongooseClient');
   const { Schema } = mongooseClient;
   const schema = new Schema({
@@ -14,35 +14,19 @@ export default function (app: Application): Model<any> {
       type: Schema.Types.ObjectId,
       ref: 'security/account',
       required: true,
-      index: true,
     },
-    assignerUserId: {
+    projectId: {
       type: Schema.Types.ObjectId,
-      ref: 'security/user',
-      required: true,
-    },
-    assigneeUserId: {
-      type: Schema.Types.ObjectId,
-      ref: 'security/user',
-    },
-    testerUserId: {
-      type: Schema.Types.ObjectId,
-      ref: 'security/user',
-    },
-    status: {
-      type: Schema.Types.ObjectId,
-      ref: 'project/status',
-      required: true,
-    },
-    priority: {
-      type: Number,
-      required: true,
+      ref: 'project/project',
     },
     name: {
       type: String,
       required: true,
     },
-    description: {
+    startAt: {
+      type: String,
+    },
+    endAt: {
       type: String,
     },
   }, {
