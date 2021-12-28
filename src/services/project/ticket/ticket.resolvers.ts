@@ -38,5 +38,19 @@ export const resolvers = {
           .get(resource.testerUserId)
       )
     },
+    sprint: (...args: any) => async (resource: Record<string, any>, { app }: HookContext) => {
+      resource.sprint = !resource.sprintId ? null : (
+        await app
+          .service('project/sprint')
+          .get(resource.sprintId)
+      )
+    },
+    status: (...args: any) => async (resource: Record<string, any>, { app }: HookContext) => {
+      resource.status = !resource.statusId ? null : (
+        await app
+          .service('project/workflow')
+          .get(resource.statusId)
+      )
+    },
   }
 };

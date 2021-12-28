@@ -23,6 +23,10 @@ export default function (app: Application): Model<any> {
       type: String,
       required: true,
     },
+    active: {
+      type: Boolean,
+      default: false,
+    },
     startAt: {
       type: String,
     },

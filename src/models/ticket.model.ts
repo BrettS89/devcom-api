@@ -29,10 +29,14 @@ export default function (app: Application): Model<any> {
       type: Schema.Types.ObjectId,
       ref: 'security/user',
     },
-    status: {
+    statusId: {
       type: Schema.Types.ObjectId,
-      ref: 'project/status',
+      ref: 'project/workflow',
       required: true,
+    },
+    sprintId: {
+      type: Schema.Types.ObjectId,
+      ref: 'project/sprint',
     },
     priority: {
       type: Number,
