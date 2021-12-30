@@ -1,5 +1,3 @@
-import { setWorkflow } from './setWorkflow';
-import { setTicketTypes } from './setTicketTypes';
 
 export default {
   before: {
@@ -16,10 +14,7 @@ export default {
     all: [],
     find: [],
     get: [],
-    create: [
-      setWorkflow,
-      setTicketTypes,
-    ],
+    create: [],
     update: [],
     patch: [],
     remove: []

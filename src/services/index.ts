@@ -13,6 +13,7 @@ import communicationDm from './communication/dm/dm.service';
 import projectSprint from './project/sprint/sprint.service';
 import projectProject from './project/project/project.service';
 import projectWorkflow from './project/workflow/workflow.service';
+import projectTicketType from './project/ticket-type/ticket-type.service';
 // Don't remove this comment. It's needed to format import lines nicely.
 
 export default function (app: Application): void {
@@ -30,4 +31,5 @@ export default function (app: Application): void {
   app.configure(projectSprint);
   app.configure(projectProject);
   app.configure(projectWorkflow);
+  app.configure(projectTicketType);
 }

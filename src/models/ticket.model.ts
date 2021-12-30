@@ -38,6 +38,11 @@ export default function (app: Application): Model<any> {
       type: Schema.Types.ObjectId,
       ref: 'project/sprint',
     },
+    typeId: {
+      type: Schema.Types.ObjectId,
+      ref: 'project/ticket-type',
+      required: true,
+    },
     priority: {
       type: Number,
       required: true,

@@ -52,5 +52,12 @@ export const resolvers = {
           .get(resource.statusId)
       )
     },
+    type: (...args: any) => async (resource: Record<string, any>, { app }: HookContext) => {
+      resource.type = !resource.typeId ? null : (
+        await app
+          .service('project/ticket-type')
+          .get(resource.typeId)
+      )
+    },
   }
 };
