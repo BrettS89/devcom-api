@@ -38,6 +38,10 @@ export default function (app: Application): Model<any> {
       type: Schema.Types.ObjectId,
       ref: 'project/sprint',
     },
+    projectId: {
+      type: Schema.Types.ObjectId,
+      ref: 'project/project',
+    },
     typeId: {
       type: Schema.Types.ObjectId,
       ref: 'project/ticket-type',
@@ -49,6 +53,10 @@ export default function (app: Application): Model<any> {
     },
     name: {
       type: String,
+      required: true,
+    },
+    number: {
+      type: Number,
       required: true,
     },
     description: {

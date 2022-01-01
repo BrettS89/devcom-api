@@ -59,5 +59,12 @@ export const resolvers = {
           .get(resource.typeId)
       )
     },
+    project: (...args: any) => async (resource: Record<string, any>, { app }: HookContext) => {
+      resource.project = !resource.projectId ? null : (
+        await app
+          .service('project/project')
+          .get(resource.projectId)
+      )
+    },
   }
 };

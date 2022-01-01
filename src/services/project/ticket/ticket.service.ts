@@ -3,7 +3,7 @@ import { ServiceAddons } from '@feathersjs/feathers';
 import { Application } from '../../../declarations';
 import { Ticket } from './ticket.class';
 import createModel from '../../../models/ticket.model';
-import hooks from './ticket.hooks';
+import hooks from './hooks';
 
 // Add this service to the service type index
 declare module '../../../declarations' {

@@ -1,12 +1,13 @@
 import { fastJoin } from 'feathers-hooks-common';
-import { resolvers } from './ticket.resolvers';
+import { resolvers } from '../ticket.resolvers';
+import { setTicketNumber } from './setTicketNumber';
 
 export default {
   before: {
     all: [],
     find: [],
     get: [],
-    create: [],
+    create: [setTicketNumber],
     update: [],
     patch: [],
     remove: []
